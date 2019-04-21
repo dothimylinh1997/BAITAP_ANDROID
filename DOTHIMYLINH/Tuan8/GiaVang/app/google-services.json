@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "113422356565",
+    "firebase_url": "https://giavangfirebase-a5fb3.firebaseio.com",
+    "project_id": "giavangfirebase-a5fb3",
+    "storage_bucket": "giavangfirebase-a5fb3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:113422356565:android:29f55cd2795fac7a",
+        "android_client_info": {
+          "package_name": "vn.edu.tdc.giavangfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "113422356565-51qovjbgvbudm1vpe6c1sfpk8q6nr1a4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAboBt5T947sOIQuRfOQAoUYioZAp814k4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "113422356565-51qovjbgvbudm1vpe6c1sfpk8q6nr1a4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
