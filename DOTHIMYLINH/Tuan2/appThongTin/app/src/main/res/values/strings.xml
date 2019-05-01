@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">appThongTin</string>
+    <string name="app_name">Demo Thông tin Cá nhân</string>
+    <string name="hoten">
+        Xin chào bạn!
+    </string>
+    <string name="nam">Nam</string>
+    <string name="nu">Nữ</string>
+    <string name="thongtin">Thông tin</string>
 </resources>

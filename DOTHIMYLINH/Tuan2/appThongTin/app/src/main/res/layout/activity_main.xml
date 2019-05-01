@@ -1,18 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:layout_margin="16dp"
+    android:orientation="vertical">
 
-    <TextView
+    <EditText
+        android:id="@+id/txt_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hoten"
+        android:textStyle="bold" />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        
+        <RadioButton
+            android:id="@+id/rbtn_nam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/nam"
+            />
+        <RadioButton
+            android:id="@+id/rbtn_nu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nu"
+            />
+    </RadioGroup>
+    <CheckBox
+        android:id="@+id/cb_mautim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Yêu màu tím"/>
+    <CheckBox
+        android:id="@+id/cb_mauhong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thích màu hồng"/>
+    <CheckBox
+        android:id="@+id/cb_noitam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sống nội tâm"/>
+    <CheckBox
+        android:id="@+id/cb_khoctham"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hay khóc thầm"/>
+    <Button
+        android:id="@+id/img_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:drawableBottom= "@mipmap/ic_launcher"
+        android:text="@string/thongtin"
+        />
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
