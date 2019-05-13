@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_login"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".AddLop">
+
+    <TextView
+        android:id="@+id/textviewThemLop"
+        android:text="Thêm Lớp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/colorAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:textSize="18sp"
+        android:text="Mã Lớp:"
+        android:textColor="	#000000" />
+
+    <EditText
+        android:id="@+id/editMaLop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập Mã Lớp"
+        android:background="@drawable/custom_edt_login"
+        android:paddingBottom="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:textSize="18sp"
+        android:text="Tên Lớp:"
+        android:textColor="	#000000" />
+
+    <EditText
+        android:id="@+id/editTenLop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập Tên Lớp"
+        android:background="@drawable/custom_edt_login"
+        android:paddingBottom="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:textSize="18sp"
+        android:text="Mã Khoa:"
+        android:textColor="	#000000" />
+
+    <EditText
+        android:id="@+id/editMaKhoaLop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập Mã Khoa"
+        android:background="@drawable/custom_edt_login"
+        android:paddingBottom="5dp" />
+
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/buttonThemLop"
+            android:text="Thêm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+                                                 />
+        <Button
+            android:id="@+id/buttonHuyLop"
+            android:text="Hủy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

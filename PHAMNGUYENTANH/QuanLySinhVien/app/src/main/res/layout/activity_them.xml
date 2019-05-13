@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_login"
+    android:orientation="vertical"
+    android:padding="20dp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:text="Mã Sinh Viên:"
+        android:textColor="	#000000" />
+
+    <EditText
+        android:id="@+id/edittextMaSinhVien"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_edt_login"
+        android:paddingBottom="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:text="Họ Tên:"
+        android:textColor="	#000000" />
+
+    <EditText
+        android:id="@+id/edittextHoTen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_edt_login"
+        android:paddingBottom="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:text="Ngày Sinh:"
+        android:textColor="	#000000" />
+
+    <EditText
+        android:id="@+id/edittextNgaySinh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_edt_login"
+        android:paddingBottom="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:text="Giới Tính:"
+        android:textColor="	#000000" />
+
+    <EditText
+        android:id="@+id/edittextGioiTinh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_edt_login"
+        android:paddingBottom="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:text="Địa Chỉ:"
+        android:textColor="	#000000" />
+
+    <EditText
+        android:id="@+id/edittextDiaChi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_edt_login"
+        android:paddingBottom="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:text="Mã Lớp"
+        android:textColor="	#000000" />
+
+    <EditText
+        android:id="@+id/edittextMaLop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_edt_login"
+        android:paddingBottom="5dp" />
+
+    <Button
+        android:id="@+id/buttonCapNhat"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/custom_button_login"
+        android:text="THÊM" />
+
+
+</LinearLayout>

@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Quản Lý Sinh Viên</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="sinhvien">Sinh Viên</string>
+    <string name="themsinhvien">Thêm Sinh Viên</string>
+    <string name="hint_email">Mời bạn nhập tên</string>
+    <string name="hint_password">Nhập mật khẩu</string>
+    <string name="hint_name">Mời nhập tên của bạn!</string>
+    <string name="btn_login">ĐĂNG NHẬP</string>
+    <string name="btn_register">ĐĂNG KÝ</string>
+    <string name="btn_link_to_register">Đăng ký ngay!</string>
+    <string name="btn_link_to_login">Đã đăng ký, Mời bạn đăng nhập!.</string>
+    <string name="welcome">Welcome</string>
+    <string name="btn_logout">ĐĂNG XUẤT</string>
+    <string name="name">Fullname</string>
+    <string-array name="spinner_default">
+        <item name="value1">KHOA</item>
+        <item name="value2">Gía trị 1</item>
+        <item name="value3">Gía trị 2</item>
+        <item name="value4">Gía trị 3</item>
+        <item name="value5">Gía trị 4</item>
+    </string-array>
+    <string-array name="spinner_default1">
+        <item name="value1">LỚP</item>
+        <item name="value2">Gía trị 1</item>
+        <item name="value3">Gía trị 2</item>
+        <item name="value4">Gía trị 3</item>
+        <item name="value5">Gía trị 4</item>
+    </string-array>
+    <string-array name="spinner_default2">
+        <item name="value1">KHOA</item>
+        <item name="value2">Gía trị 1</item>
+        <item name="value3">Gía trị 2</item>
+        <item name="value4">Gía trị 3</item>
+        <item name="value5">Gía trị 4</item>
+    </string-array>
+
+</resources>

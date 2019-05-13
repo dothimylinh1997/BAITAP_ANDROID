@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/textviewMaLopCustom"
+        android:text="Mã Lớp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textviewTenLopCustom"
+        android:text="Tên Lớp"
+        android:layout_marginTop="10dp"
+        android:textSize="25sp"
+        android:textColor="#FF5722"
+        android:textStyle="bold"
+        android:layout_below="@+id/textviewMaLopCustom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textviewMaKhoaLopCustom"
+        android:text="Mã Khoa"
+        android:layout_marginTop="10dp"
+        android:textSize="25sp"
+        android:textColor="#FF5722"
+        android:textStyle="bold"
+        android:layout_below="@+id/textviewTenLopCustom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:id="@+id/imageviewEditLop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="false"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/edit" />
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:id="@+id/imageviewDeleteLop"
+        android:layout_toLeftOf="@+id/imageviewEditLop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/delete" />
+</RelativeLayout>

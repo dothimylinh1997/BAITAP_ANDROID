@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/textviewMaSvCustom"
+        android:text="Mã Sinh Viên"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textviewHoTenCustom"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:textColor="@color/bg_register"
+        android:layout_below="@+id/textviewMaSvCustom"
+        android:text="Họ Tên Sinh Viên"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textviewNamSinhCustom"
+        android:layout_marginTop="10dp"
+        android:text="Năm Sinh"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorAccent"
+        android:layout_below="@+id/textviewHoTenCustom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textviewGioiTinhCustom"
+        android:layout_width="wrap_content"
+        android:text="Giới Tính"
+        android:textColor="#3F51B5"
+        android:layout_marginTop="10dp"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/textviewNamSinhCustom"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textviewDiaChiCustom"
+        android:layout_below="@+id/textviewHoTenCustom"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:textSize="22sp"
+        android:textColor="#FF5722"
+        android:textStyle="bold"
+        android:text="Địa Chỉ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/textviewMaLopCustom"
+        android:layout_width="wrap_content"
+        android:text="Mã Lớp"
+        android:textColor="#0d1bf0"
+        android:layout_alignParentRight="true"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textviewNamSinhCustom"
+        />
+
+
+    <ImageView
+        android:id="@+id/imageviewEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="false"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/edit" />
+    <ImageView
+        android:id="@+id/imageviewDelete"
+        android:layout_toLeftOf="@+id/imageviewEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/delete" />
+</RelativeLayout>
