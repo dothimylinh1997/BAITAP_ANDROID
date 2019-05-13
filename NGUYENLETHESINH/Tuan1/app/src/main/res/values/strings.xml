@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Tuan1</string>
+    <string name="thongtin">ban hay nhap thong tin</string>
+    <string name="gui">Gui Thong Tin</string>
+</resources>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Tuan4</string>
+    <string-array name="spinner_default">
+        <item name="value1"> 1 chân</item>
+        <item name="value2"> 2 chân</item>
+        <item name="value3"> 3 chân</item>
+        <item name="value4"> 4 chân</item>
+    </string-array>
+    <string-array name="spinner_default1">
+        <item name="value1"> 0 đuôi</item>
+        <item name="value2"> 1 đuôi</item>
+        <item name="value3"> 3 đuôi</item>
+        <item name="value4"> 9 đuôi</item>
+    </string-array>
+    <string name="btnPrevious">&#60;</string>
+    <string name="btnNext">&#62;</string>
+
+
+</resources>

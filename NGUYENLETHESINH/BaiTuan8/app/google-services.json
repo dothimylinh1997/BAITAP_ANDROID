@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "432422797084",
+    "firebase_url": "https://demot8-a04b8.firebaseio.com",
+    "project_id": "demot8-a04b8",
+    "storage_bucket": "demot8-a04b8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432422797084:android:a395308d023586a7",
+        "android_client_info": {
+          "package_name": "com.example.baituan8"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "432422797084-v9sf17hbtm4mcd2v6q60r45tibcc2bp8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAoT29OniYBtf6U62qPPxGTaqprw9BraTI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "432422797084-v9sf17hbtm4mcd2v6q60r45tibcc2bp8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

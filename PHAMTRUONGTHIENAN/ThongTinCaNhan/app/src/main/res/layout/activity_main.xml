@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/txtHoTen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Bạn nhập tên đi" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rdNam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Nam" />
+
+        <RadioButton
+            android:id="@+id/rdNu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nữ" />
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/cbYeuMauTim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yêu màu tím" />
+
+    <CheckBox
+        android:id="@+id/cbThichMauHong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thích màu hồng" />
+
+    <CheckBox
+        android:id="@+id/cbSongNoiTam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sống nội tâm" />
+
+    <CheckBox
+        android:id="@+id/cbHayKhocTham"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hay Khóc Thầm" />
+
+    <ImageButton
+        android:id="@+id/btnThongTin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/sym_def_app_icon"
+        android:layout_gravity="center"/>
+
+</LinearLayout>
