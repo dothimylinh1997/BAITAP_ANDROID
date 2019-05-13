@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgg1"
+    android:orientation="vertical"
+    android:padding="12dp"
+    tools:context=".Activity.SearchSinhVien">
+
+    <LinearLayout
+        android:weightSum="3"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_weight="2"
+            android:padding="12dp"
+            android:id="@+id/edittextSearchSV"
+            android:hint="Nhập thông tin sinh viên "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_marginLeft="12dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_btn2"
+            android:layout_alignParentRight="true"
+            android:id="@+id/buttonSearchSV"
+            android:text="Tìm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listviewSearchSV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:dividerHeight="10dp">
+
+    </ListView>
+
+
+
+
+</LinearLayout>

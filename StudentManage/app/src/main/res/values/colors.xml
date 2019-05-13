@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#48b2ff</color>
+    <color name="colorPrimaryDark">#D1826A</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="white">#ffffff</color>
+    <color name="input_login_hint">#999999</color>
+    <color name="btn_login_bg">#eceef1</color>
+    <color name="input_dangky">#888888</color>
+    <color name="input_dangky_bg">#3b4148</color>
+    <color name="input_dangky_hint">#5e6266</color>
+</resources>

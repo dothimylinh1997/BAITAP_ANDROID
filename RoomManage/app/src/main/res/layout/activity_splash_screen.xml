@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f6f6f6"
+    android:padding="12dp"
+    android:weightSum="7"
+    tools:context=".ActivitySplashScreen">
+
+    <LinearLayout
+        android:id="@+id/linearsp1"
+        android:layout_weight="6"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_marginTop="100dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ex1"
+            android:layout_width="130dp"
+            android:layout_height="130dp" />
+        <TextView
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="QUẢN LÝ PHÒNG Ở"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearsp2"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_marginLeft="90dp"
+
+            android:background="@drawable/mylogo"
+            android:layout_width="35dp"
+            android:layout_height="35dp" />
+        <TextView
+            android:textSize="19dp"
+            android:text="Group 5 Developer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgg4"
+    tools:context=".Activity.AddLop">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="12dp"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:background="@drawable/lop" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:text="Thêm lớp"
+            android:textSize="32sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:text="Mã lớp:"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/edittextMaLopAdd"
+            android:hint="Nhập mã lớp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:text="Tên Lớp:"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/edittextTenLopAdd"
+            android:hint="Nhập tên lớp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:text="Mã Khoa:"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/edittextMaKhoaLopAdd"
+            android:hint="Nhập mã khoa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/buttonOkAddLop"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/shape_btn1"
+                android:text="Thêm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/buttonHuyAddLop"
+                android:background="@drawable/shape_btn1"
+                android:text="Hủy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</ScrollView>

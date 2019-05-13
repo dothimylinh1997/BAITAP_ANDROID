@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgg4"
+    tools:context=".Activity.AddSinhVien">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:padding="12dp"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:background="@drawable/sinhvien" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:text="Thêm sinh viên"
+            android:textSize="32sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:text="Mã sinh viên:"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/edittextMaSvAdd"
+            android:hint="Nhập mã sinh viên"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:text="Họ Tên:"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/edittextHoTenSvAdd"
+            android:hint="Nhập họ tên sinh viên"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:text="Ngày Sinh:"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/edittextNgaySinhAdd"
+            android:hint="Nhập ngày sinh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:text="Giới Tính:"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/edittextGioiTinhAdd"
+            android:hint="Nhập giới tính"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:text="Địa Chỉ:"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/edittextDiaChiAdd"
+            android:hint="Nhập địa chỉ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:text="Mã Lớp:"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/edittextMaLopSvAdd"
+            android:hint="Nhập mã lớp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/buttonOkSvAdd"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/shape_btn1"
+                android:text="Thêm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/buttonHuySvAdd"
+                android:background="@drawable/shape_btn1"
+                android:text="Hủy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</ScrollView>

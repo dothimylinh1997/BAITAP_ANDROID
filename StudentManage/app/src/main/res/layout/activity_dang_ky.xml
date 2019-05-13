@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bgg3"
+    android:padding="12dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_marginTop="50dp"
+            android:layout_gravity="center"
+            android:background="@drawable/contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:layout_marginTop="20dp"
+            android:id="@+id/TenDangKy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white"
+            android:hint="Mời bạn nhập tên tài khoản"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:drawableRight="@drawable/ic_people_black_24dp"
+            android:inputType="textCapWords"
+            android:textColor="@color/input_dangky"
+            android:textColorHint="@color/input_dangky_hint" />
+        <EditText
+            android:id="@+id/NhapMatKhauDangKy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@color/white"
+            android:hint="Mời bạn nhập mật khẩu"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:drawableRight="@drawable/ic_vpn_key_black_24dp"
+            android:textColor="@color/input_dangky"
+            android:textColorHint="@color/input_dangky_hint" />
+
+        <Button
+            android:id="@+id/btnDangKy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:background="#4CAF50"
+            android:text="ĐĂNG KÝ "
+            android:textColor="@color/white" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="5dp">
+
+            <Button
+                android:id="@+id/btnLinkDangNhapNgay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@null"
+                android:text="Đăng nhập ngay !"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="17dp"
+                android:layout_marginRight="10dp"/>
+
+            <Button
+                android:id="@+id/btnThoatDangKy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text=" Thoát "
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="17dp"
+                android:layout_marginTop="20dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
