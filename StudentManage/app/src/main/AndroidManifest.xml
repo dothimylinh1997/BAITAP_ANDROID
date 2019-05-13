@@ -7,22 +7,25 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label=""
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.ActivityNhapDiem" />
-        <activity android:name=".Activity.ActivityDiem">
+        <activity android:name=".Activity.UpdateTKB"></activity>
+        <activity android:name=".Activity.ActivityTKB" />
+        <activity android:name=".Activity.UpdateThongBao" />
+        <activity android:name=".Activity.AddTKB" />
+        <activity android:name=".Activity.ActivityDiem" />
+        <activity android:name=".Activity.SearchSinhVien" />
+        <activity android:name=".Activity.ActivityDangKy" />
+        <activity android:name=".Activity.ActivityLogin" />
+        <activity android:name=".Activity.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.SearchSinhVien" />
-        <activity android:name=".Activity.ActivityDangKy" />
-        <activity android:name=".Activity.ActivityLogin" />
-        <activity android:name=".Activity.SplashScreen" />
         <activity android:name=".Activity.ActivitySinhVien" />
         <activity android:name=".Activity.ActivityLop" />
         <activity android:name=".Activity.UpdateSinhVien" />

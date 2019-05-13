@@ -31,8 +31,8 @@ import java.util.Map;
 
 public class ActivitySinhVien extends AppCompatActivity {
 
-    String urlGetData = "http://192.168.43.253:8080/quanlysinhvien/public/api/getSinhVien";
-    String urlDelete = "http://192.168.43.253:8080/quanlysinhvien/public/api/deleteSinhVien";
+    String urlGetData = "http://192.168.137.39:8080/quanlysinhvien/public/api/getSinhVien";
+    String urlDelete = "http://192.168.137.39:8080/quanlysinhvien/public/api/deleteSinhVien";
 
     ListView lvSinhvien;
     ArrayList<SinhVien> arraySinhVien;

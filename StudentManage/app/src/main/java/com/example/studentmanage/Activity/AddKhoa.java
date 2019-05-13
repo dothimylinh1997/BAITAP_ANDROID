@@ -24,7 +24,7 @@ import java.util.Map;
 
 public class AddKhoa extends AppCompatActivity {
 
-    String urlinsert = "http://192.168.43.253:8080/quanlysinhvien/public/api/addKhoa";
+    String urlinsert = "http://192.168.137.39:8080/quanlysinhvien/public/api/addKhoa";
 
     EditText edtMaKhoa, edtTenKhoa;
     Button btnThem, btnHuy;

@@ -30,8 +30,8 @@ import java.util.Map;
 
 public class ActivityLop extends AppCompatActivity {
 
-    String urlGetData = "http://192.168.43.253:8080/quanlysinhvien/public/api/getLop";
-    String urlDelete = "http://192.168.43.253:8080/quanlysinhvien/public/api/deleteLop";
+    String urlGetData = "http://192.168.137.39:8080/quanlysinhvien/public/api/getLop";
+    String urlDelete = "http://192.168.137.39:8080/quanlysinhvien/public/api/deleteLop";
 
     ListView lvLop;
     ArrayList<Lop> arrayLop;

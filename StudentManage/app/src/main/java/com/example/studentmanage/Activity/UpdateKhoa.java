@@ -23,7 +23,7 @@ import java.util.Map;
 
 public class UpdateKhoa extends AppCompatActivity {
 
-    String   urlUpdate = "http://192.168.43.253:8080/quanlysinhvien/public/api/updateKhoa";
+    String   urlUpdate = "http://192.168.137.39:8080/quanlysinhvien/public/api/updateKhoa";
 
     EditText edtMaKhoa, edtTenKhoa;
     Button btnCapNhap, btnHuy;

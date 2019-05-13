@@ -221,6 +221,64 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:padding="12dp"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/LinearThoiKhoaBieu"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/shape_item"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:src="@drawable/logo_tkb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp" />
+
+                <TextView
+                    android:textStyle="bold"
+                    android:text="Thời Khóa Biểu"
+                    android:layout_marginTop="12dp"
+                    android:textColor="#6f6f6f"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/LinearThongBao"
+                android:layout_marginRight="6dp"
+                android:background="@drawable/shape_item"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:src="@drawable/bell"
+                    android:layout_width="wrap_content"
+                    android:layout_height="110dp" />
+
+                <TextView
+                    android:textStyle="bold"
+                    android:text="Thông Báo"
+                    android:layout_marginTop="12dp"
+                    android:textColor="#6f6f6f"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>

@@ -16,8 +16,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.studentmanage.Adapter.KhoaAdapter;
-import com.example.studentmanage.Class.Khoa;
+import com.example.studentmanage.Adapter.ThoiKhoaBieuAdapter;
+import com.example.studentmanage.Class.ThoiKhoaBieu;
 import com.example.studentmanage.R;
 
 import org.json.JSONArray;
@@ -28,26 +28,23 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+public class ActivityTKB extends AppCompatActivity {
+    String urlGetData = "http://192.168.137.39:8080/quanlysinhvien/public/api/getTKB";
+    String urlDelete = "http://192.168.137.39:8080/quanlysinhvien/public/api/deleteTKB";
 
-    String urlGetData = "http://192.168.137.39:8080/quanlysinhvien/public/api/getKhoa";
-    String urlDelete = "http://192.168.137.39:8080/quanlysinhvien/public/api/deleteKhoa";
-
-    ListView lvKhoa;
-    ArrayList<Khoa> arrayKhoa;
-    KhoaAdapter adapter;
+    ListView lvTKB;
+    ArrayList<ThoiKhoaBieu> arrayTKB;
+    ThoiKhoaBieuAdapter thoiKhoaBieuAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_tkb);
 
-        lvKhoa = (ListView) findViewById(R.id.listviewKhoa);
-        arrayKhoa = new ArrayList<>();
-        adapter = new KhoaAdapter(this, R.layout.item_khoa, arrayKhoa);
-        lvKhoa.setAdapter(adapter);
-
-
+        lvTKB = (ListView) findViewById(R.id.listviewTKB);
+        arrayTKB = new ArrayList<>();
+        thoiKhoaBieuAdapter = new ThoiKhoaBieuAdapter(this, R.layout.item_tkb, arrayTKB);
+        lvTKB.setAdapter(thoiKhoaBieuAdapter);
 
         GetData(urlGetData);
     }
@@ -58,52 +55,56 @@ public class MainActivity extends AppCompatActivity {
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
-//                        Toast.makeText(MainActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
-                        arrayKhoa.clear();
-                        for(int i = 0; i < response.length(); i++){
+                        arrayTKB.clear();
+                        for (int i = 0; i <response.length(); i++){
                             try {
                                 JSONObject object = response.getJSONObject(i);
-                                arrayKhoa.add(new Khoa(
-                                        object.getString("MaKhoa"),
-                                        object.getString("TenKhoa")
+                                arrayTKB.add(new ThoiKhoaBieu(
+                                        object.getString("MaLop"),
+                                        object.getString("MaMH"),
+                                        object.getString("Thu"),
+                                        object.getString("TietBD"),
+                                        object.getString("PhongHoc"),
+                                        object.getString("ThoiGian")
                                 ));
-                            } catch (JSONException e){
+                            } catch (JSONException e) {
                                 e.printStackTrace();
                             }
                         }
-                        adapter.notifyDataSetChanged();
+                        thoiKhoaBieuAdapter.notifyDataSetChanged();
                     }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(MainActivity.this, "Lỗi show khoa!", Toast.LENGTH_SHORT).show();
-            }
-        }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(ActivityTKB.this, "Lỗi!", Toast.LENGTH_SHORT).show();
+                    }
+                }
         );
         requestQueue.add(jsonArrayRequest);
     }
-
-    public void DeleteKhoa(final String makhoa){
+    public void DeleteTKB(final String malop, final String mamon){
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, urlDelete,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(MainActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ActivityTKB.this, response.toString(), Toast.LENGTH_SHORT).show();
                         GetData(urlGetData);
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(MainActivity.this, "Lỗi rồi đó!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ActivityTKB.this, "Lỗi rồi đó!", Toast.LENGTH_SHORT).show();
                     }
                 }
         ){
             @Override
             protected Map<String , String > getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                params.put("deleteMaKhoa", makhoa);       /// SAI Ở ĐÂY NÈ
+                params.put("MaLop", malop);
+                params.put("MaMH", mamon);
 
                 return params;
             }
@@ -111,17 +112,15 @@ public class MainActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.add_item, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         if(item.getItemId() == R.id.menuAdd){
-            startActivity(new Intent(MainActivity.this, AddKhoa.class));
+            startActivity(new Intent(ActivityTKB.this, AddTKB.class));
         }
         return super.onOptionsItemSelected(item);
     }

@@ -2,13 +2,9 @@ package com.example.studentmanage.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.TableLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -17,6 +13,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.studentmanage.Adapter.LopAdapter;
+import com.example.studentmanage.Class.Lop;
 import com.example.studentmanage.R;
 
 import org.json.JSONArray;
@@ -25,35 +23,25 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-import static android.R.layout.simple_list_item_1;
-import static android.R.layout.simple_list_item_2;
-import static android.R.layout.simple_spinner_dropdown_item;
 import static android.R.layout.simple_spinner_item;
 
 public class ActivityDiem extends AppCompatActivity {
 
-    String url = "http://192.168.1.165:8080/quanlysinhvien/public/api/getLop";
-    String url1 = "http://192.168.1.165:8080/quanlysinhvien/public/api/getSinhVien";
-    Spinner spinnerChonLop;
-    ListView lvName;
-    ArrayList<String> arrayTenLop  = new ArrayList<String>();
-    ArrayList<String> arrayTenSv  = new ArrayList<String>();
+    String url = "http://192.168.137.39:8080/quanlysinhvien/public/api/getLop";
+    Spinner spinner;
+    ListView lvLop;
+    ArrayList<Lop> arrayLop;
+    ArrayList<String> names = new ArrayList<String>();
+    LopAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diem);
 
-        spinnerChonLop = findViewById(R.id.spinnerChonLop);
-        lvName = findViewById(R.id.listviewNameDiem);
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, simple_list_item_1, arrayTenSv);
-        lvName.setAdapter(arrayAdapter);
+        spinner = findViewById(R.id.spinnerChonLop);
         GetData(url);
-        GetData1(url1);
-
     }
-
-
     private void GetData(String url) {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
@@ -61,71 +49,36 @@ public class ActivityDiem extends AppCompatActivity {
                     @Override
                     public void onResponse(JSONArray response) {
 //                        Toast.makeText(MainActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
-                       for(int i = 0; i < response.length(); i++){
-                           try {
-                               JSONObject object = response.getJSONObject(i);
-
-                               arrayTenLop.add(object.getString("TenLop"));
-                               ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(ActivityDiem.this, simple_spinner_item, arrayTenLop);
-                               spinnerArrayAdapter.setDropDownViewResource(simple_spinner_dropdown_item);
-                               spinnerChonLop.setAdapter(spinnerArrayAdapter);
-                               spinnerChonLop.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                                   @Override
-                                   public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                                       Toast.makeText(ActivityDiem.this,arrayTenLop.get(position),Toast.LENGTH_SHORT).show();
-                                   }
-
-                                   @Override
-                                   public void onNothingSelected(AdapterView<?> parent) {
-
-                                   }
-                               });
-
-                           } catch (JSONException e) {
-                               e.printStackTrace();
-                           }
-
-                       }
-//                        adapter.notifyDataSetChanged();
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(ActivityDiem.this, "Lỗi show khoa!", Toast.LENGTH_SHORT).show();
-            }
-        }
-        );
-        requestQueue.add(jsonArrayRequest);
-    }
-
-    private void GetData1(String url) {
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONArray>() {
-                    @Override
-                    public void onResponse(JSONArray response) {
-//                        Toast.makeText(MainActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
+                        arrayLop.clear();
                         for(int i = 0; i < response.length(); i++){
                             try {
                                 JSONObject object = response.getJSONObject(i);
-
-                                arrayTenSv.add(object.getString("HoTen"));
-
-                            } catch (JSONException e) {
+                                arrayLop.add(new Lop(
+                                        object.getString("MaLop"),
+                                        object.getString("TenLop"),
+                                        object.getString("MaKhoa")
+                                ));
+                            } catch (JSONException e){
                                 e.printStackTrace();
                             }
                         }
+                        for(int i = 0; i < arrayLop.size(); i++){
+                            names.add(arrayLop.get(i).getTenLop().toString());
+                        }
+                        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(ActivityDiem.this, simple_spinner_item, names);
+                        spinner.setAdapter(spinnerArrayAdapter);
+                        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        adapter.notifyDataSetChanged();
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(ActivityDiem.this, "Lỗi show khoa!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityDiem.this, "Lỗi show lop !", Toast.LENGTH_SHORT).show();
             }
         }
         );
         requestQueue.add(jsonArrayRequest);
     }
-
 }
 //import android.app.ProgressDialog;
 //import android.content.Context;

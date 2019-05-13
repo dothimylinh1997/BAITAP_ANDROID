@@ -23,7 +23,7 @@ import java.util.Map;
 
 public class UpdateLop extends AppCompatActivity {
 
-    String   urlUpdate = "http://192.168.43.253:8080/quanlysinhvien/public/api/updateLop";
+    String   urlUpdate = "http://192.168.137.39:8080/quanlysinhvien/public/api/updateLop";
 
     EditText edtMaLop, edtTenLop, edtMaKhoa;
     Button btnCapNhap, btnHuy;

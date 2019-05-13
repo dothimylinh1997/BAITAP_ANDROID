@@ -22,7 +22,7 @@ import java.util.Map;
 
 public class AddSinhVien extends AppCompatActivity {
 
-    String urlinsert = "http://192.168.43.253:8080/quanlysinhvien/public/api/addSinhVien";
+    String urlinsert = "http://192.168.137.39:8080/quanlysinhvien/public/api/addSinhVien";
 
     EditText edtMaSinhVien, edtHoTen, edtGioiTinh, edtNgaySinh, edtMaLop, edtDiaChi;
     Button btnThem, btnHuy;

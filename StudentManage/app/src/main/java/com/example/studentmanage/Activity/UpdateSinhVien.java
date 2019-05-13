@@ -23,7 +23,7 @@ import java.util.Map;
 
 public class UpdateSinhVien extends AppCompatActivity {
 
-    String   urlUpdate = "http://192.168.43.253:8080/quanlysinhvien/public/api/updateSinhVien";
+    String   urlUpdate = "http://192.168.137.39:8080/quanlysinhvien/public/api/updateSinhVien";
 
     EditText edtMaSv, edtHoTen, edtNgaySinh, edtDiaChi, edtGioiTinh, edtMaLop;
     Button btnCapNhap, btnHuy;

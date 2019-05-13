@@ -24,7 +24,7 @@ import java.util.Map;
 
 public class AddLop extends AppCompatActivity {
 
-    String urlinsert = "http://192.168.43.253:8080/quanlysinhvien/public/api/addLop";
+    String urlinsert = "http://192.168.137.39:8080/quanlysinhvien/public/api/addLop";
 
     EditText edtMaLop, edtTenLop, edtMaKhoa;
     Button btnThem, btnHuy;

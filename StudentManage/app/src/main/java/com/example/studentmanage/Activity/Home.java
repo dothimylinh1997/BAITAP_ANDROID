@@ -4,16 +4,14 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.studentmanage.R;
 
 public class Home extends AppCompatActivity {
 
-    LinearLayout lnrKhoa, lnrLop, lnrSv, lnrFind;
+    LinearLayout lnrKhoa, lnrLop, lnrSv, lnrFind, lnrTKB, lnrNotify;
     TextView txtRole;
 
     @Override
@@ -47,7 +45,16 @@ public class Home extends AppCompatActivity {
                 startActivity(new Intent(Home.this, SearchSinhVien.class));
             }
         });
-
+        lnrTKB.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                startActivity(new Intent(Home.this, ActivityTKB.class));
+            }
+        });
+        lnrNotify.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                startActivity(new Intent(Home.this, UpdateThongBao.class));
+            }
+        });
     }
 
     private void Anhxa() {
@@ -56,5 +63,7 @@ public class Home extends AppCompatActivity {
         lnrLop  = (LinearLayout) findViewById(R.id.LinearLop);
         lnrSv = (LinearLayout) findViewById(R.id.LinearSinhVien);
         lnrFind = (LinearLayout) findViewById(R.id.linearPhieu);
+        lnrTKB = (LinearLayout) findViewById(R.id.LinearThoiKhoaBieu);
+        lnrNotify = (LinearLayout) findViewById(R.id.LinearThongBao);
     }
 }
