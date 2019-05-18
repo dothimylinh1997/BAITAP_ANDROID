@@ -24,7 +24,7 @@ import java.util.Map;
 
 public class AddKhoa extends AppCompatActivity {
 
-    String urlinsert = "http://192.168.137.39:8080/quanlysinhvien/public/api/addKhoa";
+    String urlinsert = ActivityLogin.url + "quanlysinhvien/public/api/addKhoa";
 
     EditText edtMaKhoa, edtTenKhoa;
     Button btnThem, btnHuy;
@@ -48,7 +48,7 @@ public class AddKhoa extends AppCompatActivity {
                 }
 
                 ThemKhoa(urlinsert);
-                startActivity(new Intent(AddKhoa.this, MainActivity.class));
+
             }
         });
 
@@ -75,8 +75,13 @@ public class AddKhoa extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(AddKhoa.this, response.toString(), Toast.LENGTH_LONG).show();
-//                        startActivity(new Intent(AddKhoa.this, MainActivity.class));
+
+                        if(response.toString().equals("Thành công")){
+                            startActivity(new Intent(AddKhoa.this, MainActivity.class));
+                        }else {
+                            Toast.makeText(AddKhoa.this, response.toString(), Toast.LENGTH_LONG).show();
+                        }
+
                     }
                 },
                 new Response.ErrorListener() {

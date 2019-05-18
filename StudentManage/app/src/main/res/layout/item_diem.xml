@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/shape_item"
+    android:padding="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:id="@+id/imageviewPhong"
+        android:src="@drawable/score"
+        android:layout_marginRight="12dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/imageviewPhong"
+        android:id="@+id/textviewMaMhDiem"
+        android:text="Mã môn học"
+        android:textSize="19sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_toRightOf="@+id/imageviewPhong"
+        android:layout_below="@+id/textviewMaMhDiem"
+        android:id="@+id/textviewDiemCC"
+        android:text="Điểm CC"
+        android:textSize="19sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_toRightOf="@+id/imageviewPhong"
+        android:layout_below="@+id/textviewDiemCC"
+        android:id="@+id/textviewDiemKT"
+        android:text="Điểm KT"
+        android:textSize="19sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_toRightOf="@+id/imageviewPhong"
+        android:layout_below="@+id/textviewDiemKT"
+        android:id="@+id/textviewDiemCK"
+        android:text="Điểm CK"
+        android:textSize="19sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_toRightOf="@+id/imageviewPhong"
+        android:layout_below="@+id/textviewDiemCK"
+        android:id="@+id/textviewDiemTK"
+        android:text="Điểm TK"
+        android:textSize="19sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</RelativeLayout>

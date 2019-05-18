@@ -1,6 +1,9 @@
 package com.example.studentmanage.Activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -31,8 +34,8 @@ import java.util.Map;
 
 public class ActivitySinhVien extends AppCompatActivity {
 
-    String urlGetData = "http://192.168.137.39:8080/quanlysinhvien/public/api/getSinhVien";
-    String urlDelete = "http://192.168.137.39:8080/quanlysinhvien/public/api/deleteSinhVien";
+    String urlGetData = ActivityLogin.url + "quanlysinhvien/public/api/getSinhVien";
+    String urlDelete = ActivityLogin.url + "quanlysinhvien/public/api/deleteSinhVien";
 
     ListView lvSinhvien;
     ArrayList<SinhVien> arraySinhVien;
@@ -119,15 +122,54 @@ public class ActivitySinhVien extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.add_item, menu);
+        getMenuInflater().inflate(R.menu.add_back_item, menu);
+        Drawable drawable= getResources().getDrawable(R.drawable.ic_back);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(drawable);
         return super.onCreateOptionsMenu(menu);
-    }
 
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId())
 
-        if(item.getItemId() == R.id.menuAdd){
-            startActivity(new Intent(ActivitySinhVien.this, AddSinhVien.class));
+        {
+            case R.id.itemThem:
+                if(item.getItemId() == R.id.itemThem ){
+                    startActivity(new Intent(ActivitySinhVien.this, AddSinhVien.class));
+                }
+                break;
+            case R.id.itemTrangchu:
+                if(item.getItemId() == R.id.itemTrangchu ){
+                    startActivity(new Intent(ActivitySinhVien.this, Home.class));
+                }
+                break;
+            case R.id.itemLogout:
+                if(item.getItemId() == R.id.itemLogout  ){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(ActivitySinhVien.this, android.R.style.Theme_DeviceDefault_Light_Dialog);
+                    builder.setTitle("Bạn có chắc muốn đăng xuất ?");
+                    builder.setMessage("Hãy lựa chọn bên dưới để xác nhận!");
+                    builder.setIcon(android.R.drawable.ic_dialog_alert);
+                    builder.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            startActivity(new Intent(ActivitySinhVien.this, ActivityLogin.class));
+                        }
+                    });
+                    builder.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    });
+                    builder.show();
+                }
+                break;
+
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+
+            default:break;
         }
         return super.onOptionsItemSelected(item);
     }

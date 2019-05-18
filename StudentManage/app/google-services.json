@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1071877526438",
+    "firebase_url": "https://thongbaorealtime.firebaseio.com",
+    "project_id": "thongbaorealtime",
+    "storage_bucket": "thongbaorealtime.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1071877526438:android:ac9226e14944691d",
+        "android_client_info": {
+          "package_name": "com.example.studentmanage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1071877526438-ka7crthra9po54gke0dh2ccgttv5i77j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGudGtN2xRUI4M2pOOJQ84HaFs_DQKB7Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1071877526438-ka7crthra9po54gke0dh2ccgttv5i77j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pickitem1"
+    android:background="@drawable/shape_item"
+    android:padding="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:id="@+id/imageviewPhong"
+        android:src="@drawable/studen1"
+        android:layout_marginRight="12dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp" />
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/imageviewPhong"
+        android:id="@+id/textviewMaSv1"
+        android:text="Mã Sinh Viên"
+        android:textSize="19sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_toRightOf="@+id/imageviewPhong"
+        android:layout_below="@+id/textviewMaSv1"
+        android:id="@+id/textviewHoTenSv1"
+        android:text="Họ Tên Sinh Viên"
+        android:textSize="19sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_toRightOf="@+id/imageviewPhong"
+        android:layout_below="@+id/textviewHoTenSv1"
+        android:id="@+id/textviewMaMhSv1"
+        android:text="Mã môn học"
+        android:textSize="19sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+</RelativeLayout>

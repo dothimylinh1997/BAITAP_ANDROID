@@ -23,7 +23,7 @@ import java.util.Map;
 
 public class UpdateSinhVien extends AppCompatActivity {
 
-    String   urlUpdate = "http://192.168.137.39:8080/quanlysinhvien/public/api/updateSinhVien";
+    String   urlUpdate = ActivityLogin.url + "quanlysinhvien/public/api/updateSinhVien";
 
     EditText edtMaSv, edtHoTen, edtNgaySinh, edtDiaChi, edtGioiTinh, edtMaLop;
     Button btnCapNhap, btnHuy;
@@ -45,6 +45,9 @@ public class UpdateSinhVien extends AppCompatActivity {
         edtDiaChi.setText(sv.getDiaChi());
         edtGioiTinh.setText(sv.getGioiTinh());
         edtMaLop.setText(sv.getMaLop());
+
+        edtMaSv.setEnabled(false);
+        edtMaLop.setEnabled(false);
 
         btnCapNhap.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,8 +92,13 @@ public class UpdateSinhVien extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(UpdateSinhVien.this, response.toString(), Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(UpdateSinhVien.this, ActivitySinhVien.class));
+
+                        if(response.toString().equals("Thành công")){
+                            startActivity(new Intent(UpdateSinhVien.this, ActivitySinhVien.class));
+                        }else {
+                            Toast.makeText(UpdateSinhVien.this, response.toString(), Toast.LENGTH_SHORT).show();
+                        }
+
                     }
                 },
                 new Response.ErrorListener() {

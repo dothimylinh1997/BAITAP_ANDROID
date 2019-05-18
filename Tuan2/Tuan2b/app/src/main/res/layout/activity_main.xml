@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/txtXinChao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Xin chào "
+        android:textStyle="bold"/>
+<RadioGroup
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <RadioButton
+        android:checked="true"
+        android:id="@+id/btnNam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nam"/>
+    <RadioButton
+
+        android:id="@+id/btnNu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nữ"/>
+
+</RadioGroup>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mời bạn lựa chọn:"/>
+    <CheckBox
+        android:id="@+id/cbMeo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mèo"/>
+    <CheckBox
+        android:id="@+id/cbChuot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chuột"/>
+    <CheckBox
+        android:id="@+id/cbHeo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Heo"/>
+    <CheckBox
+        android:id="@+id/cbSinh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sinh"/>
+
+    <Button
+        android:id="@+id/btnThongTin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="THÔNG TIN" />
+
+
+    <ImageView
+        android:id="@+id/imgPicture"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:contentDescription="TODO"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/abc" />
+
+
+
+
+</LinearLayout>

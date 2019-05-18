@@ -1,4 +1,17 @@
 <resources>
-    <string name="app_name">StudentManage</string>
-    <string name="title_activity_update_tkb">UpdateTKB</string>
+    <string name="app_name"> Student Mangage </string>
+    <string name="home"> Trang chủ </string>
+    <string name="khoa"> Khoa  </string>
+    <string name="lop"> Lớp </string>
+    <string name="monhoc"> Môn Học </string>
+    <string name="sinhvien"> Sinh Viên </string>
+    <string name="diem"> Điểm </string>
+    <string name="timkiem"> Tìm Kiếm </string>
+    <string name="diemdanh"> Điểm Danh </string>
+    <string name="thoikhoabieu"> Thời Khóa Biểu </string>
+    <string name="thongbao"> Thông Báo </string>
+    <string name="login"> Đăng Nhập </string>
+    <string name="xemdiem"> Xem Điểm Sinh Viên </string>
+    <string name="nhapdiem"> Nhập Điểm </string>
+    <string name="thoikhoabieusv"> Thời Khóa Biểu Sinh Viên </string>
 </resources>

@@ -44,7 +44,7 @@ public class SinhVienAdapter extends BaseAdapter {
         return 0;
     }
 
-    class ViewHolder{
+    private class ViewHolder{
         TextView txtHoTen, txtNgaySinh, txtDiaChi, txtGioiTinh, txtMaLop, txtMaSv;
         ImageView imgEdit, imgDelete;
     }

@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -23,7 +22,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UpdateTKB extends AppCompatActivity {
-    String   urlUpdate = "http://192.168.137.39:8080/quanlysinhvien/public/api/updateTKB";
+
+    String   urlUpdate = ActivityLogin.url + "quanlysinhvien/public/api/updateTKB";
 
     EditText editMaLopup, editMaMHup, editPhongHocup, editThuup, editTietBDup, editThoiGianup;
     Button btnCapnhat, btnHuy;
@@ -44,6 +44,9 @@ public class UpdateTKB extends AppCompatActivity {
         editThoiGianup.setText(thoiKhoaBieu.getThoiGian());
         editTietBDup.setText(thoiKhoaBieu.getTietBD());
         editPhongHocup.setText(thoiKhoaBieu.getPhongHoc());
+
+        editMaMHup.setEnabled(false);
+        editMaLopup.setEnabled(false);
 
         btnCapnhat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,8 +90,13 @@ public class UpdateTKB extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(UpdateTKB.this, response.toString(), Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(UpdateTKB.this, ActivityTKB.class));
+
+                        if(response.toString().equals("Thành công")){
+                            startActivity(new Intent(UpdateTKB.this, ActivityTKB.class));
+                        }else {
+                            Toast.makeText(UpdateTKB.this, response.toString(), Toast.LENGTH_SHORT).show();
+                        }
+
                     }
                 },
                 new Response.ErrorListener() {

@@ -1,10 +1,22 @@
 package com.example.studentmanage.Activity;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TableLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -13,8 +25,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.studentmanage.Adapter.LopAdapter;
-import com.example.studentmanage.Class.Lop;
 import com.example.studentmanage.R;
 
 import org.json.JSONArray;
@@ -23,62 +33,208 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import static android.R.layout.simple_list_item_1;
+import static android.R.layout.simple_list_item_2;
+import static android.R.layout.simple_spinner_dropdown_item;
 import static android.R.layout.simple_spinner_item;
 
 public class ActivityDiem extends AppCompatActivity {
 
-    String url = "http://192.168.137.39:8080/quanlysinhvien/public/api/getLop";
-    Spinner spinner;
-    ListView lvLop;
-    ArrayList<Lop> arrayLop;
-    ArrayList<String> names = new ArrayList<String>();
-    LopAdapter adapter;
+    String urlGetLop = ActivityLogin.url + "quanlysinhvien/public/api/getLop";
+    String urlGetMonHoc = ActivityLogin.url + "quanlysinhvien/public/api/getMonHoc";
+
+    public static String mamh;
+    public static String malop;
+
+    Spinner spinnerChonLop, spinnerChonMonHoc;
+    Button btnNhapDiem, btnXemDiem;
+    EditText edtNhapMaSv;
+    ArrayList<String> arrayMaLop  = new ArrayList<String>();
+    ArrayList<String> arrayMaMonHoc  = new ArrayList<String>();
+    String masv ="" ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diem);
 
-        spinner = findViewById(R.id.spinnerChonLop);
-        GetData(url);
+        spinnerChonLop    = (Spinner) findViewById(R.id.spinnerChonLop);
+        spinnerChonMonHoc = (Spinner) findViewById(R.id.spinnerChonMonHoc);
+        btnNhapDiem       = (Button) findViewById(R.id.buttonNhapDiem);
+        btnXemDiem        = (Button) findViewById(R.id.buttonXemDiem);
+        edtNhapMaSv       = (EditText) findViewById(R.id.edittextMaSvXemDiem);
+
+
+        if(ActivityLogin.rolename == "sinhvien"){
+            Intent intent = new Intent(ActivityDiem.this, XemDiem.class);
+            intent.putExtra("masinhvien",ActivityLogin.username);
+            ActivityDiem.this.startActivity(intent);
+        }
+
+
+        btnNhapDiem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ActivityDiem.this, ActivityNhapDiem.class));
+
+            }
+        });
+        btnXemDiem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                masv = edtNhapMaSv.getText().toString();
+                Intent intent = new Intent(ActivityDiem.this, XemDiem.class);
+                intent.putExtra("masinhvien",masv);
+                ActivityDiem.this.startActivity(intent);
+            }
+        });
+
+
+        GetDataLop(urlGetLop);
+        GetDataMonhoc(urlGetMonHoc);
+
     }
-    private void GetData(String url) {
+
+    private void GetDataMonhoc(String url) {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
 //                        Toast.makeText(MainActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
-                        arrayLop.clear();
                         for(int i = 0; i < response.length(); i++){
                             try {
                                 JSONObject object = response.getJSONObject(i);
-                                arrayLop.add(new Lop(
-                                        object.getString("MaLop"),
-                                        object.getString("TenLop"),
-                                        object.getString("MaKhoa")
-                                ));
-                            } catch (JSONException e){
+
+                                arrayMaMonHoc.add(object.getString("MaMH"));
+                                ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(ActivityDiem.this, simple_spinner_item, arrayMaMonHoc);
+                                spinnerArrayAdapter.setDropDownViewResource(simple_spinner_dropdown_item);
+                                spinnerChonMonHoc.setAdapter(spinnerArrayAdapter);
+                                spinnerChonMonHoc.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                    @Override
+                                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                        mamh = arrayMaMonHoc.get(position);
+//                                        Toast.makeText(ActivityDiem.this,mamh,Toast.LENGTH_SHORT).show();
+                                    }
+
+                                    @Override
+                                    public void onNothingSelected(AdapterView<?> parent) {
+
+                                    }
+                                });
+
+                            } catch (JSONException e) {
                                 e.printStackTrace();
                             }
+
                         }
-                        for(int i = 0; i < arrayLop.size(); i++){
-                            names.add(arrayLop.get(i).getTenLop().toString());
-                        }
-                        ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(ActivityDiem.this, simple_spinner_item, names);
-                        spinner.setAdapter(spinnerArrayAdapter);
-                        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                        adapter.notifyDataSetChanged();
+//                        adapter.notifyDataSetChanged();
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(ActivityDiem.this, "Lỗi show lop !", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityDiem.this, "Lỗi get môn học!", Toast.LENGTH_SHORT).show();
             }
         }
         );
         requestQueue.add(jsonArrayRequest);
     }
+
+
+    public void GetDataLop(String url) {
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+//                        Toast.makeText(MainActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
+                       for(int i = 0; i < response.length(); i++){
+                           try {
+                               JSONObject object = response.getJSONObject(i);
+
+                               arrayMaLop.add(object.getString("MaLop"));
+                               ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(ActivityDiem.this, simple_spinner_item, arrayMaLop);
+                               spinnerArrayAdapter.setDropDownViewResource(simple_spinner_dropdown_item);
+                               spinnerChonLop.setAdapter(spinnerArrayAdapter);
+                               spinnerChonLop.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                                   @Override
+                                   public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                       malop = arrayMaLop.get(position);
+//                                       Toast.makeText(ActivityDiem.this,malop,Toast.LENGTH_SHORT).show();
+                                   }
+
+                                   @Override
+                                   public void onNothingSelected(AdapterView<?> parent) {
+
+                                   }
+                               });
+
+                           } catch (JSONException e) {
+                               e.printStackTrace();
+                           }
+
+                       }
+//                        adapter.notifyDataSetChanged();
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(ActivityDiem.this, "Lỗi get tên lớp!", Toast.LENGTH_SHORT).show();
+            }
+        }
+        );
+        requestQueue.add(jsonArrayRequest);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.back_item, menu);
+        Drawable drawable= getResources().getDrawable(R.drawable.ic_back);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(drawable);
+        return super.onCreateOptionsMenu(menu);
+
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId())
+        {
+            case R.id.itemTrangchu:
+                if(item.getItemId() == R.id.itemTrangchu ){
+                    startActivity(new Intent(ActivityDiem.this, Home.class));
+                }
+                break;
+            case R.id.itemLogout:
+                if(item.getItemId() == R.id.itemLogout  ){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(ActivityDiem.this, android.R.style.Theme_DeviceDefault_Light_Dialog);
+                    builder.setTitle("Bạn có chắc muốn đăng xuất ?");
+                    builder.setMessage("Hãy lựa chọn bên dưới để xác nhận!");
+                    builder.setIcon(android.R.drawable.ic_dialog_alert);
+                    builder.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            startActivity(new Intent(ActivityDiem.this, ActivityLogin.class));
+                        }
+                    });
+                    builder.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    });
+                    builder.show();
+                }
+                break;
+
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+
+            default:break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }
 //import android.app.ProgressDialog;
 //import android.content.Context;

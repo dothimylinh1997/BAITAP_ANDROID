@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_item"
+    android:id="@+id/pickitem"
+    android:padding="12dp">
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:id="@+id/imageviewMonHoc"
+        android:src="@drawable/monhoc"
+        android:layout_marginRight="12dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/imageviewMonHoc"
+        android:id="@+id/textviewMaMH"
+        android:text="Mã Môn"
+        android:textSize="19sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_toRightOf="@+id/imageviewMonHoc"
+        android:layout_below="@+id/textviewMaMH"
+        android:id="@+id/textviewTenMH"
+        android:text="Tên Môn"
+        android:textSize="19sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+    <ImageView
+        android:layout_alignParentRight="true"
+        android:id="@+id/imageviewEditMonHoc"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/edit"
+        android:layout_marginRight="12dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+    <ImageView
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/imageviewEditMonHoc"
+        android:layout_marginTop="10dp"
+        android:id="@+id/imageviewDeleteMH"
+        android:src="@drawable/delete"
+        android:layout_marginRight="12dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+
+</RelativeLayout>

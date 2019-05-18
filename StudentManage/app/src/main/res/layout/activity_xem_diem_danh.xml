@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgg1"
+    android:orientation="vertical"
+    android:padding="12dp"
+    tools:context=".Activity.XemDiemDanh">
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:id="@+id/tesst3"
+        android:background="@drawable/shape_item"
+        android:textSize="20sp"
+        android:text="DANH SACH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:background="@drawable/shape_btn1"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="XONG"
+        android:id="@+id/buttonDiemDanhSv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ListView
+        android:layout_marginTop="10dp"
+        android:id="@+id/listviewDsSV1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dividerHeight="10dp">
+    </ListView>
+
+</LinearLayout>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgg1"
+    android:orientation="vertical"
+    android:padding="12dp"
+    tools:context=".Activity.XemDiem">
+
+    <TextView
+        android:layout_gravity="center"
+        android:id="@+id/tesst2"
+        android:background="@drawable/shape_item"
+        android:textSize="20sp"
+        android:text="MÃ SINH VIÊN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ListView
+        android:layout_marginTop="10dp"
+        android:id="@+id/listviewDiemSv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:dividerHeight="10dp">
+
+    </ListView>
+
+
+
+
+</LinearLayout>

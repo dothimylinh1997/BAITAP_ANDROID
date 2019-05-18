@@ -4,58 +4,85 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgg4"
-    android:orientation="vertical"
+    android:background="@drawable/bbgg"
     tools:context=".Activity.UpdateThongBao">
-
-    <ImageView
-        android:layout_gravity="center"
-        android:background="@drawable/bug"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:layout_gravity="center"
-        android:textStyle="bold"
-        android:text="Thông báo khẩn"
-        android:textSize="32sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:padding="12dp"
         android:orientation="vertical"
-        >
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <TextView
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
             android:textStyle="bold"
-            android:text="Thông tin cần thông báo:"
+            android:textColor="#E91E63"
+            android:text="Thêm Thông Báo"
+            android:textSize="30sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtTieuDe"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:text="Nhập Tiêu Đề Thông Báo:"
             android:textSize="18sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <EditText
-            android:id="@+id/editthongbao"
-            android:hint="Nhập thông báo"
+            android:id="@+id/editTieuDe"
+            android:hint="Nhập Tiêu Đề"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_marginTop="30dp"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/buttonOkAddThongbao"
-            android:layout_marginRight="12dp"
-            android:background="@drawable/shape_btn1"
-            android:text="Ok"
+        <TextView
+            android:id="@+id/txtNoiDung"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:text="Nhập Nội Dung:"
+            android:textSize="18sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/buttonHuyAddThongbao"
-            android:background="@drawable/shape_btn1"
-            android:text="Hủy"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/editNoiDung"
+            android:hint="Nhập Nội Dung"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-    </LinearLayout>
 
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:background="@drawable/shape_btn1"
+                android:id="@+id/btnThemThongBao"
+                android:layout_marginRight="12dp"
+                android:text="Thêm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <Button
+                android:background="@drawable/shape_btn1"
+                android:id="@+id/BtnHuyThongBao"
+                android:text="Hủy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <ListView
+                android:id="@+id/lvtb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_item">
+
+            </ListView>
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

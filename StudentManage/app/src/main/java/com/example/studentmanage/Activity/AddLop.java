@@ -24,7 +24,7 @@ import java.util.Map;
 
 public class AddLop extends AppCompatActivity {
 
-    String urlinsert = "http://192.168.137.39:8080/quanlysinhvien/public/api/addLop";
+    String urlinsert = ActivityLogin.url + "quanlysinhvien/public/api/addLop";
 
     EditText edtMaLop, edtTenLop, edtMaKhoa;
     Button btnThem, btnHuy;
@@ -48,7 +48,7 @@ public class AddLop extends AppCompatActivity {
                 }
 
                 ThemLop(urlinsert);
-                startActivity(new Intent(AddLop.this, ActivityLop.class));
+
             }
         });
 
@@ -76,8 +76,13 @@ public class AddLop extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(AddLop.this, response.toString(), Toast.LENGTH_LONG).show();
-//                        startActivity(new Intent(AddKhoa.this, MainActivity.class));
+
+                        if(response.toString().equals("Thành công")){
+                            startActivity(new Intent(AddLop.this, ActivityLop.class));
+                        }else {
+                            Toast.makeText(AddLop.this, response.toString(), Toast.LENGTH_LONG).show();
+                        }
+
                     }
                 },
                 new Response.ErrorListener() {

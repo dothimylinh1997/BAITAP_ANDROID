@@ -1,6 +1,7 @@
 package com.example.studentmanage.Activity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,7 +24,7 @@ import java.util.Map;
 
 public class UpdateKhoa extends AppCompatActivity {
 
-    String   urlUpdate = "http://192.168.137.39:8080/quanlysinhvien/public/api/updateKhoa";
+    String   urlUpdate = ActivityLogin.url + "quanlysinhvien/public/api/updateKhoa";
 
     EditText edtMaKhoa, edtTenKhoa;
     Button btnCapNhap, btnHuy;
@@ -41,6 +42,11 @@ public class UpdateKhoa extends AppCompatActivity {
 
         edtMaKhoa.setText(khoa.getMaKhoa());
         edtTenKhoa.setText(khoa.getTenKhoa());
+
+        edtMaKhoa.setEnabled(false);
+//        disableEditText(edtMaKhoa);
+
+
 
         btnCapNhap.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,8 +83,13 @@ public class UpdateKhoa extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(UpdateKhoa.this, response.toString(), Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(UpdateKhoa.this, MainActivity.class));
+
+                        if(response.toString().equals("Thành công")){
+                            startActivity(new Intent(UpdateKhoa.this, MainActivity.class));
+                        }else {
+                            Toast.makeText(UpdateKhoa.this, response.toString(), Toast.LENGTH_SHORT).show();
+                        }
+
                     }
                 },
                 new Response.ErrorListener() {
@@ -98,5 +109,13 @@ public class UpdateKhoa extends AppCompatActivity {
             }
         };
         requestQueue.add(stringRequest);
+    }
+
+    private void disableEditText(EditText editText) {
+        editText.setFocusable(false);
+        editText.setEnabled(false);
+        editText.setCursorVisible(false);
+        editText.setKeyListener(null);
+        editText.setBackgroundColor(Color.TRANSPARENT);
     }
 }

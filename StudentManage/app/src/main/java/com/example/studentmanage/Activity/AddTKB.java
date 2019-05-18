@@ -22,7 +22,7 @@ import java.util.Map;
 
 public class AddTKB extends AppCompatActivity {
 
-    String urlinsert = "http://192.168.137.39:8080/quanlysinhvien/public/api/addTKB";
+    String urlinsert = ActivityLogin.url + "quanlysinhvien/public/api/addTKB";
 
     EditText editMaLop, editMaMon, editThu, editTietBatDau, editPhong, editThoiGian;
     Button btnOk, btnHuy;
@@ -45,8 +45,9 @@ public class AddTKB extends AppCompatActivity {
                 if(malop.isEmpty() || mamon.isEmpty() || thu.isEmpty() || tietbatdau.isEmpty() || phong.isEmpty() || thoigian.isEmpty()){
                     Toast.makeText(AddTKB.this, "Vui lòng nhập đủ thông tin thời khóa biểu!", Toast.LENGTH_SHORT).show();
                 }
+
                 ThemTKB(urlinsert);
-                startActivity(new Intent(AddTKB.this, ActivityTKB.class));
+
             }
         });
         btnHuy.setOnClickListener(new View.OnClickListener() {
@@ -73,8 +74,12 @@ public class AddTKB extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(AddTKB.this, response.toString(), Toast.LENGTH_LONG).show();
-//                        startActivity(new Intent(AddKhoa.this, MainActivity.class));
+
+                        if(response.toString().equals("Thành công")){
+                            startActivity(new Intent(AddTKB.this, ActivityTKB.class));
+                        }else {
+                            Toast.makeText(AddTKB.this, response.toString(), Toast.LENGTH_LONG).show();
+                        }
                     }
                 },
                 new Response.ErrorListener() {

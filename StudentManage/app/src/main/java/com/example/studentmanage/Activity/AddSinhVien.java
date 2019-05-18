@@ -22,7 +22,7 @@ import java.util.Map;
 
 public class AddSinhVien extends AppCompatActivity {
 
-    String urlinsert = "http://192.168.137.39:8080/quanlysinhvien/public/api/addSinhVien";
+    String urlinsert = ActivityLogin.url + "quanlysinhvien/public/api/addSinhVien";
 
     EditText edtMaSinhVien, edtHoTen, edtGioiTinh, edtNgaySinh, edtMaLop, edtDiaChi;
     Button btnThem, btnHuy;
@@ -44,12 +44,13 @@ public class AddSinhVien extends AppCompatActivity {
                 String diachi = edtDiaChi.getText().toString().trim();
                 String ngaysinh = edtNgaySinh.getText().toString().trim();
                 String malop = edtMaLop.getText().toString().trim();
+
                 if(masinhvien.isEmpty() || hoten.isEmpty() || gioitinh.isEmpty() || diachi.isEmpty() || ngaysinh.isEmpty() || malop.isEmpty()){
                     Toast.makeText(AddSinhVien.this, "Vui lòng nhập đủ thông tin sinh viên!", Toast.LENGTH_SHORT).show();
                 }
 
                 ThemSinhVien(urlinsert);
-                startActivity(new Intent(AddSinhVien.this, ActivitySinhVien.class));
+
             }
         });
 
@@ -78,8 +79,12 @@ public class AddSinhVien extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(AddSinhVien.this, response.toString(), Toast.LENGTH_LONG).show();
-//                        startActivity(new Intent(AddKhoa.this, MainActivity.class));
+
+                        if(response.toString().equals("Thành công")){
+                            startActivity(new Intent(AddSinhVien.this, ActivitySinhVien.class));
+                        }else {
+                            Toast.makeText(AddSinhVien.this, response.toString(), Toast.LENGTH_LONG).show();
+                        }
                     }
                 },
                 new Response.ErrorListener() {
