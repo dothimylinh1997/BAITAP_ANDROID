@@ -24,7 +24,7 @@ import java.util.Map;
 
 public class ActivityLogin extends AppCompatActivity {
 
-    public static String url = "http://192.168.1.95:8080/";
+    public static String url = "http://192.168.1.110:8080/";
     Button btnDangNhap, btnDangKyTaiKhoan, btnThoatDangNhap;
     EditText edtUserDN, edtPasswordDN;
     public static String username;
